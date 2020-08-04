@@ -1,0 +1,15 @@
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\bin\Debug\WpfApp13-listview2.exe.config
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\bin\Debug\WpfApp13-listview2.exe
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\bin\Debug\WpfApp13-listview2.pdb
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.csprojAssemblyReference.cache
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\MainWindow.g.cs
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\App.g.cs
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2_MarkupCompile.cache
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2_MarkupCompile.lref
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\MainWindow.baml
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.g.resources
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13_listview2.Properties.Resources.resources
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.csproj.GenerateResource.cache
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.csproj.CoreCompileInputs.cache
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.exe
+C:\Users\YUUKI\source\repos\WpfApp13-listview2\WpfApp13-listview2\obj\Debug\WpfApp13-listview2.pdb
