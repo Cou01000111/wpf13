@@ -8,10 +8,11 @@
         Title="郵便番号一覧" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="67*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-        <Menu Margin="0,0,-0.4,244" Grid.RowSpan="2">
+        <Menu Margin="0,0,-0.4,168.976" Grid.RowSpan="2">
             <MenuItem Header="ファイル(_F)">
                 <MenuItem x:Name="openMenu" Header="開く(_O)" Click="openMenu_Click"/>
                 <MenuItem x:Name="exitMenu" Header="終了(_X)" Click="exitMenu_Click"/>
@@ -20,7 +21,7 @@
                 <MenuItem x:Name="clearMenu" Header="クリア(_C)" Click="clearMenu_Click"/>
             </MenuItem>
         </Menu>
-        <ListView x:Name="listView" Margin="0,0.6,-0.4,-3" Grid.Row="1">
+        <ListView x:Name="listView" Margin="0,0.6,-0.4,-3" Grid.Row="1" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="郵便番号" DisplayMemberBinding="{Binding Zip}"/>
@@ -31,7 +32,8 @@
                     <GridViewColumn Header="町域名カナ" DisplayMemberBinding="{Binding TownKana}"/>
                 </GridView>
             </ListView.View>
-        </ListView>
 
+        </ListView>
+        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBox" Grid.Row="2" Margin="0,23.2,-0.4,0"/>
     </Grid>
 </Window>
