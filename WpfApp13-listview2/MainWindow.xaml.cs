@@ -86,9 +86,8 @@ namespace WpfApp13_listview2
         {
             var dlg = new Microsoft.Win32.OpenFileDialog();
 
-            //フィルタ設定
-            dlg.Filter = 
-                "CSVファイル(*.csv) | *.csv | テキストファイル(*.txt) | *.txt | 全てのファイル(*.*) | *.* ";
+            // フィルタ設定
+            dlg.Filter = "CSVファイル(*.csv)|*.csv|テキストファイル(*.txt)|*.txt|全てのファイル(*.*)|*.*";
             // フィルタの1番目(CSV)を選択状態にする
             dlg.FilterIndex = 1;
 
