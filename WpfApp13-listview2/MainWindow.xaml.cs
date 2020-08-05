@@ -48,14 +48,11 @@ namespace WpfApp13_listview2
 
                 try
                 {
-                    //int i = 0;// debug
-
                     // ファイルの終わりまで繰り返す
                     while (parser.EndOfData == false)
                     {
                         // 一行分読み込み
                         string[] buf = parser.ReadFields();
-
 
                         this.ZipRecords.Add(new ZipRecord
                         {
@@ -74,13 +71,10 @@ namespace WpfApp13_listview2
                             Flag4 = buf[12],
                             Flag5 = buf[13],
                             Flag6 = buf[14],
+                            
                         });
 
-                        /*
-                        i++;// debug
-                        string istring = i.ToString();// debug
-                        textBlock.Text = "parserが"+istring+"回回されました";// debug
-                        */
+                        console.Text += buf[7] + " ,";// debug
                     }
                 }
                 catch
@@ -92,7 +86,6 @@ namespace WpfApp13_listview2
 
         private void openMenu_Click(object sender, RoutedEventArgs e)
         {
-            //textBlock.Text = "openMenu_Clickが実行されました";
             var dlg = new Microsoft.Win32.OpenFileDialog();
 
             // フィルタ設定

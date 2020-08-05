@@ -34,6 +34,7 @@
             </ListView.View>
 
         </ListView>
-        <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBox" Grid.Row="2" Margin="0,23.2,-0.4,0"/>
+        <TextBox x:Name="console" Grid.Row="2" TextWrapping="Wrap" Text="console:" HorizontalScrollBarVisibility="Auto"/>
+
     </Grid>
 </Window>
