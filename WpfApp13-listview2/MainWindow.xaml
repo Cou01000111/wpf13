@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:WpfApp13_listview2"
         mc:Ignorable="d"
         Title="郵便番号一覧" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskbarInfo"/>
+    </Window.TaskbarItemInfo>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="109*"/>
-            <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-        <Menu Margin="0,0,-0.4,168.976" Grid.RowSpan="2">
+        <Menu Grid.RowSpan="1">
             <MenuItem Header="ファイル(_F)">
                 <MenuItem x:Name="openMenu" Header="開く(_O)" Click="openMenu_Click"/>
                 <MenuItem x:Name="exitMenu" Header="終了(_X)" Click="exitMenu_Click"/>
@@ -21,7 +23,7 @@
                 <MenuItem x:Name="clearMenu" Header="クリア(_C)" Click="clearMenu_Click"/>
             </MenuItem>
         </Menu>
-        <ListView x:Name="listView" Margin="0,0.6,-0.4,-3" Grid.Row="1" Grid.RowSpan="2">
+        <ListView x:Name="listView" Margin="0,0.6,-0.4,-3" Grid.Row="1" Grid.RowSpan="2" d:IsHidden="True">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="郵便番号" DisplayMemberBinding="{Binding Zip}"/>
@@ -33,8 +35,8 @@
                 </GridView>
             </ListView.View>
 
-        </ListView>
-        <TextBox x:Name="console" Grid.Row="2" TextWrapping="Wrap" Text="console:" HorizontalScrollBarVisibility="Auto"/>
 
+        </ListView>
+        <TextBlock x:Name="loadingText" TextWrapping="Wrap" Text="読み込み中・・・" Grid.Row="1" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
     </Grid>
 </Window>

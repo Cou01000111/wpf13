@@ -27,7 +27,52 @@ namespace WpfApp13_listview2
             InitializeComponent();
 
             this.ZipRecords = new System.Collections.ObjectModel.ObservableCollection<ZipRecord>();
-            listView.DataContext = this.ZipRecords;
+            listView.ItemsSource = this.ZipRecords;
+            BindingOperations.EnableCollectionSynchronization(this.ZipRecords, new object());
+        }
+
+        /// <summary>
+        /// データ読み込み中の画面表示
+        /// </summary>
+        /// <param name="loading">データ読み込み中の時にtrue, 読み込み終わったらfalseを設定する</param>
+        private void SetLoadingUI(bool loading)
+        {
+            if (loading)
+            {
+                // 処理中
+
+                // 画面全体を無効化
+                this.IsEnabled = !loading;
+                // 処理中メッセージを表示
+                loadingText.Visibility = Visibility.Visible;
+                // リストを隠す
+                listView.Visibility = Visibility.Collapsed;
+                // タスクバーアイコンを処理中表示にする
+                taskbarInfo.ProgressState = System.Windows.Shell.TaskbarItemProgressState.Indeterminate;
+            }
+            else
+            {
+                // 処理終り
+
+                // 画面全体を有効化
+                this.IsEnabled = !loading;
+                // 処理中メッセージを隠す
+                loadingText.Visibility = Visibility.Collapsed;
+                // リストを表示
+                listView.Visibility = Visibility.Visible;
+                // タスクバーアイコンを通常に戻す
+                taskbarInfo.ProgressState = System.Windows.Shell.TaskbarItemProgressState.None;
+            }
+        }
+
+        /// <summary>
+        /// CSVファイル読み込みタスク
+        /// </summary>
+        /// <param name="filePath">CSVファイルパス</param>
+        /// <returns></returns>
+        private Task ReadCsvTask(string filePath)
+        {
+            return Task.Run(() => { ReadCsv(filePath); });
         }
 
         /// <summary>
@@ -73,8 +118,6 @@ namespace WpfApp13_listview2
                             Flag6 = buf[14],
                             
                         });
-
-                        console.Text += buf[7] + " ,";// debug
                     }
                 }
                 catch
@@ -84,7 +127,7 @@ namespace WpfApp13_listview2
             }
         }
 
-        private void openMenu_Click(object sender, RoutedEventArgs e)
+        private async void openMenu_Click(object sender, RoutedEventArgs e)
         {
             var dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -96,12 +139,12 @@ namespace WpfApp13_listview2
             // ファイルを開くダイアログ表示
             if (dlg.ShowDialog() == true)
             {
-                this.IsEnabled = false;
+                SetLoadingUI(true);
 
                 // CSV読み込み
-                ReadCsv(dlg.FileName);
+                await ReadCsvTask(dlg.FileName);
 
-                this.IsEnabled = true;
+                SetLoadingUI(false);
             }
         }
 
